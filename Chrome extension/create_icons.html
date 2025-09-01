@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Extension Icons</title>
+</head>
+<body>
+    <canvas id="canvas16" width="16" height="16" style="border: 1px solid black;"></canvas>
+    <canvas id="canvas48" width="48" height="48" style="border: 1px solid black;"></canvas>
+    <canvas id="canvas128" width="128" height="128" style="border: 1px solid black;"></canvas>
+    
+    <script>
+        function createIcon(canvasId, size) {
+            const canvas = document.getElementById(canvasId);
+            const ctx = canvas.getContext('2d');
+            
+            // Background
+            ctx.fillStyle = '#000428';
+            ctx.fillRect(0, 0, size, size);
+            
+            // Stars
+            ctx.fillStyle = 'white';
+            for (let i = 0; i < size/4; i++) {
+                ctx.fillRect(Math.random() * size, Math.random() * size, 1, 1);
+            }
+            
+            // Spaceship
+            ctx.fillStyle = '#00ff00';
+            const shipSize = size * 0.3;
+            const x = (size - shipSize) / 2;
+            const y = size * 0.6;
+            ctx.fillRect(x, y, shipSize, shipSize * 0.8);
+            
+            // Download link
+            canvas.toBlob(function(blob) {
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `icon${size}.png`;
+                a.textContent = `Download ${size}x${size} icon`;
+                a.style.display = 'block';
+                document.body.appendChild(a);
+            });
+        }
+        
+        createIcon('canvas16', 16);
+        createIcon('canvas48', 48);
+        createIcon('canvas128', 128);
+    </script>
+</body>
+</html>
