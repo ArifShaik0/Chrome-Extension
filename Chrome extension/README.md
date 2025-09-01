@@ -27,7 +27,9 @@ No more losing focus. Just click the extension icon, and a **popup game window**
 2. Open Chrome and go to: `chrome://extensions/`  
 3. Enable **Developer mode** (top right).  
 4. Click **Load unpacked** and select this project folder.  
-5. The extension icon will appear in your toolbar.  
+5. The extension icon will appear in your toolbar.
+
+6. **Also available in Chrome Web Store. Search: Space Shooter -  Time Pass Game**
 
 ---
 
@@ -64,3 +66,4 @@ This project is open-source. Feel free to fork, modify, and have fun!
 ---
 
 ### ✨ Made with fun & focus in mind!
+
